@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product card</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="card__heart">
+            <i class='bx bx-heart'></i>
+        </div>
+        <div class="card__cart">
+            <i class='bx bx-cart'></i>
+        </div>
+        <div class="card__img">
+            <img id="productImage" src="Nike KD 12.png" alt="">
+        </div>
+        <div class="card__title">
+            Nike KD 12 Blue
+        </div>
+        <div class="card__price">
+            $10000
+        </div>
+        <div class="card__size">
+            <h3>Size:</h3>
+            <span onclick="zoomImage(0.8)">6</span>
+            <span onclick="zoomImage(0.9)">7</span>
+            <span onclick="zoomImage(1.0)">8</span>
+            <span onclick="zoomImage(1.1)">9</span>
+        </div>
+        <div class="card__color">
+            <h3>Color:</h3>
+            <span id="blue" class="card__color--blue"></span>
+            <span id="green" class="card__color--green"></span>
+            <span id="black" class="card__color--black"></span>
+            <span id="red" class="card__color--red"></span>
+        </div>
+        <div class="card__action">
+            <button class="no-underline"><a href="https://neverstopshop.com/Giay-Nike-KD-12-Mint-Blue-NK1668">Buy Now</a></button>
+            <button class="no-underline"><a href="https://neverstopshop.com/Giay-Nike-KD-12-Mint-Blue-NK1668">Add Cart</a></button>
+        </div>
+        
+    </div>
+
+    <script>
+        const blueSpan = document.getElementById("blue");
+        const greenSpan = document.getElementById("green");
+        const blackSpan = document.getElementById("black");
+        const redSpan = document.getElementById("red");
+
+        // Định nghĩa một hàm 
+        function thayDoiMauNen(mau) {
+            document.body.style.background = `linear-gradient( ${mau}, #63d5e7)`;
+        }
+
+        // Thêm đổi màu
+        blueSpan.addEventListener("click", function () {
+            thayDoiMauNen("#3d8880");
+        });
+
+        greenSpan.addEventListener("click", function () {
+            thayDoiMauNen("green");
+        });
+
+        blackSpan.addEventListener("click", function () {
+            thayDoiMauNen("black");
+        });
+
+        redSpan.addEventListener("click", function () {
+            thayDoiMauNen("red");
+        });
+
+//hình
+        function zoomImage(scale) {
+            const productImage = document.getElementById('productImage');
+            productImage.style.transform = `scale(${scale})`;
+        }
+    </script>
+    
+</body>
+</html>
